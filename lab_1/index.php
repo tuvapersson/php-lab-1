@@ -7,9 +7,26 @@ $username = "root";
 $password = "root";
 $database = "todo_application";
 
-$connection = new mysqli($servername, $username, $password, $database);
+$mysqli = new mysqli($servername, $username, $password, $database);
 
-echo $connection->host_info;
+echo $mysqli->host_info;
+
+// Check connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+  }
+  echo "Connected successfully";
+
+//   $sql = "INSERT INTO todo_application (title, description)
+//   VALUES ('exempel', 'Beskrivning')";
+  
+//   if ($mysqli->query($sql) === TRUE) {
+//     echo "New record created successfully";
+//   } else {
+//     echo "Error: " . $sql . "<br>" . $mysqli->error;
+//   }
+  
+//   $mysqli->close();
 
 ?>
 
