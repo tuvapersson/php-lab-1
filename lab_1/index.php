@@ -7,26 +7,15 @@ $username = "root";
 $password = "root";
 $database = "todo_application";
 
+//connect to mySQL
 $mysqli = new mysqli($servername, $username, $password, $database);
 
-echo $mysqli->host_info;
 
 // Check connection
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
   }
-  echo "Connected successfully";
-
-//   $sql = "INSERT INTO todo_application (title, description)
-//   VALUES ('exempel', 'Beskrivning')";
-  
-//   if ($mysqli->query($sql) === TRUE) {
-//     echo "New record created successfully";
-//   } else {
-//     echo "Error: " . $sql . "<br>" . $mysqli->error;
-//   }
-  
-//   $mysqli->close();
+$result = $mysqli->query("SELECT * FROM tasks");
 
 ?>
 
@@ -42,11 +31,18 @@ if ($mysqli->connect_error) {
     <header>
         <nav>
             <ul>
-                <li></li>
             </ul>
         </nav>
     </header>
     <main>
+        <!-- TODO LIST OUTPUT -->
+        <ul>
+         <?php
+            while($row = $result->fetch_assoc()) {
+                echo "<li><a href='edit-task.php?id={$row["id"]}'>{$row["title"]} – {$row["description"]}</li>";
+            }
+        ?>
+        </ul>
 
     </main>
     
