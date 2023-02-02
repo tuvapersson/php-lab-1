@@ -14,8 +14,8 @@ if ($mysqli->connect_error) {
   }
 
 // prepare and bind
-$stmt = $mysqli->prepare("INSERT INTO tasks (title, description) VALUES (?, ?)");
-$stmt->bind_param("i", $_POST["id"]); //add parameters: i = one integer. sss = three strings.
+$stmt = $mysqli->prepare("INSERT INTO tasks (title, description, status) VALUES (?, ?, ?)");
+$stmt->bind_param("ssi", $_POST["title"], $_POST["description"], $_POST["status"]); //add parameters: i = one integer. sss = three strings.
 $stmt->execute();
 
 $result = $stmt->get_result();
@@ -29,10 +29,5 @@ $result = $stmt->get_result();
     <title>Create task</title>
 </head>
 <body>
-<form action="welcome.php" method="post">
-Title: <input type="text" name="title"><br>
-Description: <input type="text" name="description"><br>
-<input type="submit">
-</form>
 </body>
 </html>
