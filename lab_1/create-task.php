@@ -1,17 +1,7 @@
 <?php 
 //This script contains code for getting task data from a POST-request, saving that as a new task to the database, and then redirecting the user to the start page.
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$database = "todo_application";
 
-//connect to mySQL
-$mysqli = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-  }
+require 'db-connection.php';
 
 // prepare and bind
 $stmt = $mysqli->prepare("INSERT INTO tasks (title, description, status) VALUES (?, ?, ?)");

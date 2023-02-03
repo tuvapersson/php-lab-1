@@ -1,19 +1,20 @@
 <?php
 //This page contains a form for creating a new task and a button for deleting the task. 
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$database = "todo_application";
+// $servername = "localhost";
+// $username = "root";
+// $password = "root";
+// $database = "todo_application";
 
-//connect to mySQL
-$mysqli = new mysqli($servername, $username, $password, $database);
+// //connect to mySQL
+// $mysqli = new mysqli($servername, $username, $password, $database);
 
 
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-  }
+// // Check connection
+// if ($mysqli->connect_error) {
+//     die("Connection failed: " . $mysqli->connect_error);
+//   }
+require 'db-connection.php';
 
 // prepare and bind
 $stmt = $mysqli->prepare("SELECT * FROM tasks WHERE id=?");

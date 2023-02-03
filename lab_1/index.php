@@ -2,19 +2,7 @@
 
 //This is the start page where all tasks are displayed including a link for editing/deleting each task and another link for adding a new task.
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$database = "todo_application";
-
-//connect to mySQL
-$mysqli = new mysqli($servername, $username, $password, $database);
-
-
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-  }
+require 'db-connection.php';
 $result = $mysqli->query("SELECT * FROM tasks");
 
 ?>
