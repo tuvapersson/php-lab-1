@@ -25,9 +25,9 @@
             validationOutput.innerHTML = "Description must be filled out.";
             return false;
         }
-        else if (!(radioButtons[0].checked || radioButtons[1].checked)) {
-        validationOutput.innerHTML = "Please select if task is completed or not.";
-        return false;
+        // else if (!(radioButtons[0].checked || radioButtons[1].checked)) {
+        // validationOutput.innerHTML = "Please select if task is completed or not.";
+        // return false;
 }
     }
 </script>
@@ -36,10 +36,11 @@
     <form name="createTask" action="create-task.php" onsubmit="return validateForm()" method="post">
     Title: <input type="text" name="title"><br>
     Description: <input type="text" name="description" ><br>
-    Status: <input type="radio" id="not-completed" name="status" value="0">
-  <label for="not-completed">Not completed</label>
+    <!-- Status: <input type="radio" id="not-completed" name="status" value="0"> -->
+  <!-- <label for="not-completed">Not completed</label>
     <input type="radio" id="completed" name="status" value="1">
-  <label for="completed">Completed</label><br><br>
+  <label for="completed">Completed</label><br><br> -->
+  <input type="hidden" name="status" value="0">
   <p class="form-validation"></p>
     <input type="submit" value="Submit">
     </form>

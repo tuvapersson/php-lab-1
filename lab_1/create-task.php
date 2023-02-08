@@ -3,12 +3,21 @@
 
 require 'db-connection.php';
 
+
 // prepare and bind
 $stmt = $mysqli->prepare("INSERT INTO tasks (title, description, status) VALUES (?, ?, ?)");
 $stmt->bind_param("ssi", $_POST["title"], $_POST["description"], $_POST["status"]); //add parameters: i = one integer. sss = three strings.
-$stmt->execute();
+$success = $stmt->execute();
 
-$result = $stmt->get_result();
+
+//redirect user if success
+if ($success) {
+    header("location: index.php");
+}
+else {
+    echo "error";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
