@@ -1,9 +1,3 @@
-<?php
-
-//This page contains a form for creating a new task.
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,23 +26,17 @@
             validationOutput.innerHTML = "Description must be filled out.";
             return false;
         }
-        // else if (!(radioButtons[0].checked || radioButtons[1].checked)) {
-        // validationOutput.innerHTML = "Please select if task is completed or not.";
-        // return false;
 }
     }
 </script>
 </head>
 <body>
+<button onclick="history.back()" class="back-btn">Go Back</button>
     <main>
         <h1>Create task</h1>
     <form name="createTask" action="create-task.php" onsubmit="return validateForm()" method="post">
     <input type="text" name="title" placeholder="Title"><br>
     <textarea name="description" rows="4" cols="27" placeholder="Description"></textarea><br>
-    <!-- Status: <input type="radio" id="not-completed" name="status" value="0"> -->
-  <!-- <label for="not-completed">Not completed</label>
-    <input type="radio" id="completed" name="status" value="1">
-  <label for="completed">Completed</label><br><br> -->
   <input type="hidden" name="status" value="0">
   <p class="form-validation"></p>
     <input type="submit" value="Submit" class="submit-button">

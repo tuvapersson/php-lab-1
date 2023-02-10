@@ -1,5 +1,4 @@
 <?php
-//This page contains a form for creating a new task and a button for deleting the task. 
 
 require_once __DIR__ . '/db-connection.php';
 
@@ -50,13 +49,11 @@ $task = $result->fetch_assoc();
             validationOutput.innerHTML = "Description must be filled out.";
             return false;
         }
-        // else if (!(radioButtons[0].checked || radioButtons[1].checked)) {
-        // validationOutput.innerHTML = "Please select if task is completed or not.";
-        // return false;
 }
 </script>
 </head>
 <body>
+<button onclick="history.back()" class="back-btn">Go Back</button>
 <main>
         <h1>
             <?= $task["title"] ?>

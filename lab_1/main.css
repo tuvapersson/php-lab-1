@@ -1,6 +1,7 @@
 body {
     background-image: url('img/background-img.svg');
-    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
     background-repeat: no-repeat;
     margin: 0 auto;
     width: 350px;
@@ -53,6 +54,19 @@ a {
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
 }
+.back-btn {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: 0.1s;
+}
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
 h1 {
     font-family: 'Abril Fatface', cursive;
     font-size: 30px;
@@ -72,6 +86,11 @@ h1 {
     font-size: 12px;
     transition: 0.1s;
     margin-top: 10px;
+    transition: 0.1s;
+}
+.delete-button:hover, .submit-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 .edit-button {
     background-color: white;
@@ -84,6 +103,11 @@ h1 {
     font-size: 12px;
     transition: 0.1s;
     margin-top: 20px;
+    transition: 0.1s;
+}
+.edit-button:hover {
+    cursor: pointer;
+    background-color: rgb(246, 246, 246);
 }
 input[name="title"] {
     background-color: white;

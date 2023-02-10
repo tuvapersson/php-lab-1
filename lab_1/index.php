@@ -1,7 +1,5 @@
 <?php
 
-//This is the start page where all tasks are displayed including a link for editing/deleting each task and another link for adding a new task.
-
 require_once __DIR__ . '/db-connection.php';
 $result = $mysqli->query("SELECT * FROM tasks");
 

@@ -39,6 +39,7 @@ $task = $result->fetch_assoc();
     
 </head>
 <body>
+<button onclick="history.back()" class="back-btn">Go Back</button>
 <main>
         <h1>
             <?= $task["title"] ?>
